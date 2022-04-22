@@ -16,8 +16,8 @@ setuptools.setup(
     version="1.0.0",
     author="Agilium Labs LLC",
     author_email="agiliumtrade@agiliumtrade.ai",
-    description="Python SDK for equity tracking API. Can track equities for MetaTrader accounts added to MetaApi."
-                "Supports both for MetaTrader 5 (MT5) and MetaTrader 4 (MT4). (https://metaapi.cloud)",
+    description="Python SDK for MetaApi risk management API. Can execute trading risk restrictions, forex challenges "
+                "and competitions in a cloud on both MetaTrader 5 (MT5) and MetaTrader 4 (MT4) (https://metaapi.cloud)",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     keywords=['metaapi.cloud', 'MetaTrader', 'MetaTrader 5', 'MetaTrader 4', 'MetaTrader5', 'MetaTrader4', 'MT', 'MT4',
