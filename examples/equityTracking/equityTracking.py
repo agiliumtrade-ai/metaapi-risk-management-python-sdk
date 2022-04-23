@@ -1,4 +1,4 @@
-from metaapi_cloud_risk_management_sdk import RiskManagement, DrawdownListener
+from metaapi_cloud_sdk import RiskManagement, DrawdownListener
 import os
 import asyncio
 import json
