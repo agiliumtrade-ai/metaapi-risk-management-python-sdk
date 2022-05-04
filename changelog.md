@@ -1,3 +1,6 @@
+1.1.0
+  - add more dd tracking periods
+
 1.0.1
   - updated examples
 

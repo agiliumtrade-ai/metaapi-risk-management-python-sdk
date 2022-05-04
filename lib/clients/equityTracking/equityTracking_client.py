@@ -14,10 +14,15 @@ class DrawdownTrackerUpdate(TypedDict, total=False):
 class Period(Enum):
     """Period length to track drawdown for."""
     day = 'day'
+    today = 'today'
     week = 'week'
+    week_to_date = 'week-to-date'
     month = 'month'
+    month_to_date = 'month-to-date'
     quarter = 'quarter'
+    quarter_to_date = 'quarter-to-date'
     year = 'year'
+    year_to_date = 'year-to-date'
     lifetime = 'lifetime'
 
 
