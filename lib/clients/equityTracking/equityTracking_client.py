@@ -11,7 +11,7 @@ class DrawdownTrackerUpdate(TypedDict, total=False):
     """Drawdown tracker name."""
 
 
-Period = Literal['day', 'today', 'week', 'week-to-date', 'month', 'month-to-date', 'quarter', 'quarter-to-date',
+Period = Literal['day', 'date', 'week', 'week-to-date', 'month', 'month-to-date', 'quarter', 'quarter-to-date',
                  'year', 'year-to-date', 'lifetime']
 """Period length to track drawdown for."""
 
