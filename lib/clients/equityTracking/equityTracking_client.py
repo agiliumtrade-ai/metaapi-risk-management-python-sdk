@@ -1,8 +1,8 @@
 from .drawdownListenerManager import DrawdownListenerManager
 from .drawdownListener import DrawdownListener
-from typing import List, TypedDict, Optional
+from typing import List, TypedDict, Optional, Literal
 from ..domain_client import DomainClient
-from enum import Enum
+from urllib import parse
 
 
 class DrawdownTrackerUpdate(TypedDict, total=False):
@@ -11,19 +11,9 @@ class DrawdownTrackerUpdate(TypedDict, total=False):
     """Drawdown tracker name."""
 
 
-class Period(Enum):
-    """Period length to track drawdown for."""
-    day = 'day'
-    today = 'today'
-    week = 'week'
-    week_to_date = 'week-to-date'
-    month = 'month'
-    month_to_date = 'month-to-date'
-    quarter = 'quarter'
-    quarter_to_date = 'quarter-to-date'
-    year = 'year'
-    year_to_date = 'year-to-date'
-    lifetime = 'lifetime'
+Period = Literal['day', 'today', 'week', 'week-to-date', 'month', 'month-to-date', 'quarter', 'quarter-to-date',
+                 'year', 'year-to-date', 'lifetime']
+"""Period length to track drawdown for."""
 
 
 class NewDrawdownTracker(DrawdownTrackerUpdate, total=False):
@@ -154,6 +144,21 @@ class EquityTrackingClient:
         """
         return await self._domainClient.request_api({
             'url': f'/users/current/accounts/{account_id}/drawdown-trackers',
+            'method': 'GET',
+        })
+
+    async def get_drawdown_tracker_by_name(self, account_id: str, name: str) -> DrawdownTracker:
+        """Returns drawdown tracker by account and name.
+
+        Args:
+            account_id: Id of the MetaApi account.
+            name: Tracker name.
+
+        Returns:
+            A coroutine resolving with drawdown tracker found.
+        """
+        return await self._domainClient.request_api({
+            'url': f'/users/current/accounts/{account_id}/drawdown-trackers/name/{parse.quote(name)}',
             'method': 'GET',
         })
 
