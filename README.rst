@@ -81,6 +81,9 @@ In order to configure equity tracking you need to:
     # retrieve list of trackers
     print(await risk_management_api.get_drawdown_trackers('accountId'))
 
+    # retrieve a tracker by name
+    print(await risk_management_api.get_drawdown_tracker_by_name('accountId', 'Test tracker'))
+
     # update a tracker
     print(await risk_management_api.update_drawdown_tracker('accountId', tracker_id['id'], {'name': 'Updated name'}))
 
@@ -144,7 +147,7 @@ Related projects:
 
 See our website for the full list of APIs and features supported `https://metaapi.cloud/#features <https://metaapi.cloud/#features>`_
 
-Some of the APIs you might decide to use together with this module:
+Some of the APIs you might decide to use together with risk management API are:
 
 1. MetaApi cloud forex trading API `https://metaapi.cloud/docs/client/ <https://metaapi.cloud/docs/client/>`_
 2. MetaStats cloud forex trading statistics API `https://metaapi.cloud/docs/metastats/ <https://metaapi.cloud/docs/metastats/>`_

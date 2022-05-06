@@ -13,7 +13,7 @@ tests_require = [
 
 setuptools.setup(
     name="metaapi_cloud_risk_management_sdk",
-    version="1.1.0",
+    version="1.2.0",
     author="Agilium Labs LLC",
     author_email="agiliumtrade@agiliumtrade.ai",
     description="Python SDK for MetaApi risk management API. Can execute trading risk restrictions, forex challenges "

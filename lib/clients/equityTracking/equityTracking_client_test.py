@@ -55,6 +55,18 @@ class TestEquityTrackingClient:
         })
 
     @pytest.mark.asyncio
+    async def test_retrieve_drawdown_tracker_by_name(self):
+        """Should retrieve drawdown tracker by name."""
+        expected = {'name': 'trackerName'}
+        domain_client.request_api = AsyncMock(return_value=expected)
+        actual = await equity_tracking_client.get_drawdown_tracker_by_name('accountId', 'name')
+        assert actual == expected
+        domain_client.request_api.assert_called_with({
+            'url': '/users/current/accounts/accountId/drawdown-trackers/name/name',
+            'method': 'GET'
+        })
+
+    @pytest.mark.asyncio
     async def test_update_drawdown_tracker(self):
         """Should update drawdown tracker."""
         update = {'name': 'newTrackerName'}
