@@ -1,3 +1,6 @@
+1.2.1
+  - fixed dependency vulnerabilities
+
 1.2.0
   - added method to retrieve tracker by account id and name
   - adjusted tracking period names

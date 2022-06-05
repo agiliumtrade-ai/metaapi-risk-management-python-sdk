@@ -11,6 +11,8 @@ to what you would have to pay for hosting your own infrastructure. This is possi
 optimize our MetaTrader infrastructure. And with MetaApi you can save significantly on application development and
 maintenance costs and time thanks to high-quality API, open-source SDKs and convenience of a cloud service.
 
+This SDK requires a 3.8+ version of Python to run.
+
 MetaApi risk management API features
 =====================================
 
